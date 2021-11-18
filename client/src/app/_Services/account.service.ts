@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import { User } from 'src/_Models/User';
+import { User } from 'src/app/_Models/User';
 import { ReplaySubject } from 'rxjs';
 
 @Injectable({
@@ -37,6 +37,7 @@ export class AccountService {
           localStorage.setItem('user', JSON.stringify(user));
           this.currentUser.next(user);
         }
+        return user;
       }));
   }
 
